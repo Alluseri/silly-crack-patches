@@ -27,3 +27,14 @@ Address|Length|Original bytes|Patched bytes
 
 ## Notes
 Main binary is protected with ASProtect, didn't bother unpacking or fixing dump. SciLexer.dll is loaded after the binary is unpacked in memory, so I just made use of that. No ASLR either. This method doesn't require a patched version of CoGenDrm.dll and is launchable even if RPG Maker VX Ace is not properly installed(i.e. the COM classes are missing, like they were in my case).
+
+# Lossless Scaling
+Funny useless thing.
+## Patches
+### Lossless.dll
+Address|Length|Original bytes|Patched bytes
+-|-|-|-
+1800201CD|0x6|0F 84 EE 02 00 00|90 90 90 90 90 90 
+
+## Notes
+Checks the registry for Steam ownership, doesn't even use steam_api.dll.
